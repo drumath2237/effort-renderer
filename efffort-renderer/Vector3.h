@@ -17,3 +17,47 @@ bool operator ==(const Vector3 v1, const Vector3 v2) {
 	else
 		return false;
 }
+
+Vector3 operator +(const Vector3 v1, const Vector3 v2) {
+	return Vector3(
+		v1.x + v2.x,
+		v1.y + v2.y,
+		v1.z + v2.z
+		);
+}
+
+Vector3 operator -(const Vector3 v1, const Vector3 v2) {
+	return Vector3(
+		v1.x - v2.x,
+		v1.y - v2.y,
+		v1.z - v2.z
+	);
+}
+
+Vector3 operator *(const Vector3 v1, const Vector3 v2) {
+	return Vector3(
+		v1.x * v2.x,
+		v1.y * v2.y,
+		v1.z * v2.z
+	);
+}
+
+Vector3 operator *(const Vector3 v1, double d) {
+	return Vector3(
+		v1.x * d,
+		v1.y * d,
+		v1.z * d
+	);
+}
+
+Vector3 operator *(double d, const Vector3 v1) {
+	return v1 * d;
+}
+
+Vector3 operator /(const Vector3 v, double d) {
+	return Vector3(v.x / d, v.y / d, v.z / d);
+}
+
+Vector3 operator /(double d, const Vector3 v) {
+	return Vector3(d / v.x, d / v.y, d / v.z);
+}

@@ -31,3 +31,15 @@ TEST(VectorTest, Constructor4) {
 	EXPECT_EQ(v.y, 4.);
 	EXPECT_EQ(v.z, 3.);
 }
+
+TEST(VectorTest, operation) {
+	auto v1 = Vector3();
+	auto v2 = Vector3(1., 2.);
+
+	EXPECT_EQ(v1 + v2, Vector3(1., 2., 0));
+	EXPECT_EQ(v1 - v2, Vector3(-1., -2., 0));
+
+	v1 = Vector3(1.);
+
+	EXPECT_EQ(v1 * v2, Vector3(1., 2., 0));
+}
