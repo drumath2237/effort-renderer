@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.28803.352
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "efffort-renderer", "efffort-renderer\efffort-renderer.vcxproj", "{2D49751D-58A1-4A58-920B-8DECA68F1880}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "effort-Test", "effort-Test\effort-Test.vcxproj", "{2B12A3D0-5EC0-4672-B35C-F46734CA34FE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +23,14 @@ Global
 		{2D49751D-58A1-4A58-920B-8DECA68F1880}.Release|x64.Build.0 = Release|x64
 		{2D49751D-58A1-4A58-920B-8DECA68F1880}.Release|x86.ActiveCfg = Release|Win32
 		{2D49751D-58A1-4A58-920B-8DECA68F1880}.Release|x86.Build.0 = Release|Win32
+		{2B12A3D0-5EC0-4672-B35C-F46734CA34FE}.Debug|x64.ActiveCfg = Debug|x64
+		{2B12A3D0-5EC0-4672-B35C-F46734CA34FE}.Debug|x64.Build.0 = Debug|x64
+		{2B12A3D0-5EC0-4672-B35C-F46734CA34FE}.Debug|x86.ActiveCfg = Debug|Win32
+		{2B12A3D0-5EC0-4672-B35C-F46734CA34FE}.Debug|x86.Build.0 = Debug|Win32
+		{2B12A3D0-5EC0-4672-B35C-F46734CA34FE}.Release|x64.ActiveCfg = Release|x64
+		{2B12A3D0-5EC0-4672-B35C-F46734CA34FE}.Release|x64.Build.0 = Release|x64
+		{2B12A3D0-5EC0-4672-B35C-F46734CA34FE}.Release|x86.ActiveCfg = Release|Win32
+		{2B12A3D0-5EC0-4672-B35C-F46734CA34FE}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
