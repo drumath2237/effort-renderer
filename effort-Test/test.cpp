@@ -43,3 +43,11 @@ TEST(VectorTest, operation) {
 
 	EXPECT_EQ(v1 * v2, Vector3(1., 2., 0));
 }
+
+TEST(VectorTest, dot_and_cross) {
+	auto v1 = Vector3(1.);
+	auto v2 = Vector3(1., 2.);
+
+	EXPECT_EQ(dot(v1, v2), 3.);
+	EXPECT_EQ(cross(v1, v2), Vector3(-2, 1, 1));
+}
