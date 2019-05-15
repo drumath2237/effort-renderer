@@ -51,3 +51,9 @@ TEST(VectorTest, dot_and_cross) {
 	EXPECT_EQ(dot(v1, v2), 3.);
 	EXPECT_EQ(cross(v1, v2), Vector3(-2, 1, 1));
 }
+
+TEST(VectorTest, length_and_normalize) {
+	auto v = Vector3(1.);
+	EXPECT_EQ(v.length(), sqrt(3));
+	EXPECT_EQ(normalize(v).length(), 1.);
+}

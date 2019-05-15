@@ -9,6 +9,14 @@ public:
 	Vector3(double x_) : x(x_), y(x_), z(x_) {};
 	Vector3(double x_, double y_) :x(x_), y(y_), z(0) {};
 	Vector3(double x_, double y_, double z_) :x(x_), y(y_), z(z_) {};
+
+	double length() {
+		return sqrt(x * x + y * y + z * z);
+	}
+
+	double length2() {
+		x* x + y * y + z * z;
+	}
 };
 
 bool operator ==(const Vector3 v1, const Vector3 v2) {
@@ -72,4 +80,8 @@ Vector3 cross(const Vector3 v1, const Vector3 v2) {
 		v1.z * v2.x - v1.x * v2.z,
 		v1.x * v2.y - v1.y * v2.x
 	);
+}
+
+Vector3 normalize(Vector3 v) {
+	return v / v.length();
 }
