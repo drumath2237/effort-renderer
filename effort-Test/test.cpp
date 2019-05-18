@@ -2,6 +2,27 @@
 #include "gtest/gtest.h"
 
 #include "../efffort-renderer/Vector3.h"
+#include "../efffort-renderer/Ray.h"
+
+TEST(RayTest, Constructor) {
+	Ray r = Ray();
+	EXPECT_EQ(r.direction.x, 1);
+	EXPECT_EQ(r.direction.y, 0);
+
+	EXPECT_EQ(r.origin, Vector3());
+}
+
+TEST(RayTest, Constructor2) {
+	Ray r = Ray(Vector3(1, 2, 3), Vector3(4, 5, 6));
+	EXPECT_EQ(r.direction, Vector3(4, 5, 6));
+	EXPECT_EQ(r.origin, Vector3(1, 2, 3));
+}
+
+TEST(RayTest, t_) {
+	Ray r = Ray();
+	EXPECT_EQ(r(3.), Vector3(3., 0, 0));
+}
+
 
 
 TEST(VectorTest, Constructor1) {
