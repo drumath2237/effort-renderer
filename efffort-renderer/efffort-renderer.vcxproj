@@ -154,6 +154,7 @@
     <ClCompile Include="..\..\..\..\kaito%27s file\programs\efffort-renderer\efffort-renderer\efffort-renderer.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\..\kaito%27s file\programs\efffort-renderer\efffort-renderer\Ray.h" />
     <ClInclude Include="..\..\..\..\kaito%27s file\programs\efffort-renderer\efffort-renderer\Vector3.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
