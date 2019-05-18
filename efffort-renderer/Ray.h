@@ -8,9 +8,9 @@ public:
 	Vector3 direction;
 
 	Ray() :origin(Vector3()), direction(Vector3(1,0,0)) {};
-	Ray(Vector3 o, Vector3 d) :origin(o), direction(normalize(d)) {};
+	Ray(Vector3 o, Vector3 d) :origin(o), direction(d) {};
 
 	Vector3 operator()(double t) const {
-		return origin + direction * t;
+		return origin + normalize(direction) * t;
 	}
 };
