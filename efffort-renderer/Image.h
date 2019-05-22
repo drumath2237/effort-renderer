@@ -3,33 +3,35 @@
 #include <iostream>
 #include <vector>
 
+#include "Vector3.h"
+
 using namespace std;
 
 class Image {
 public:
 
 	int width, height;
-	vector<double> data;
+	vector<Vector3> data;
 
 	Image() :width(640), height(400) {
-		data = vector<double>(width*height, 0);
+		data = vector<Vector3>(width*height, Vector3());
 	};
 
 	Image(int w, int h) : width(w), height(h) {
-		data = vector<double>(w * h, 0);
+		data = vector<Vector3>(w * h, Vector3());
 	};
 
-	double getPixel(int x, int y)const;
-	void setPixel(int x, int y, double value);
+	Vector3 getPixel(int x, int y)const;
+	void setPixel(int x, int y, Vector3 value);
 	void ppm_out(string filename);
 	Image gammma_correction()const;
 
 };
 
-double Image::getPixel(int x, int y) const {
+Vector3 Image::getPixel(int x, int y) const {
 	return data[x * width + y];
 }
 
-void Image::setPixel(int x, int y, double value) {
+void Image::setPixel(int x, int y, Vector3 value) {
 	data[x * width + y] = value;
 }

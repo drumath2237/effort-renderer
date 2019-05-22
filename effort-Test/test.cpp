@@ -3,6 +3,7 @@
 
 #include "../efffort-renderer/Vector3.h"
 #include "../efffort-renderer/Ray.h"
+#include "../efffort-renderer/Image.h"
 
 TEST(RayTest, Constructor) {
 	Ray r = Ray();
