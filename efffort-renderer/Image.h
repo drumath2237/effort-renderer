@@ -30,13 +30,22 @@ public:
 };
 
 Vector3 Image::getPixel(int x, int y) const {
-	return data[x * width + y];
+	return data[y * width + x];
 }
 
 void Image::setPixel(int x, int y, Vector3 value) {
-	data[x * width + y] = value;
+	data[x + width * y] = value;
 }
 
 void Image::ppm_out(string filename) const {
 	ofstream ofs(filename);
+	ofs << "P3" << endl;
+	ofs << width << " " << height << endl;
+	ofs << 255 << endl;
+
+	for (int i = 0; i < width; i++) for (int j = 0; j < height; j++) {
+		Vector3 col = getPixel(i, j);
+
+	}
+
 }
