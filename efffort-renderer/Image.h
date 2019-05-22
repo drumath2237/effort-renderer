@@ -5,6 +5,7 @@
 #include <fstream>
 
 #include "Vector3.h"
+#include "util.h"
 
 using namespace std;
 
@@ -39,13 +40,20 @@ void Image::setPixel(int x, int y, Vector3 value) {
 
 void Image::ppm_out(string filename) const {
 	ofstream ofs(filename);
+
 	ofs << "P3" << endl;
 	ofs << width << " " << height << endl;
 	ofs << 255 << endl;
 
 	for (int i = 0; i < width; i++) for (int j = 0; j < height; j++) {
-		Vector3 col = getPixel(i, j);
+		Vector3 color = getPixel(i, j);
+		int r = clamp(0, (int)color.x, 255);
+		int g = clamp(0, (int)color.y, 255);
+		int b = clamp(0, (int)color.z, 255);
 
+		ofs << r << " " << g << " " << b << endl;
 	}
+
+	ofs.close();
 
 }
