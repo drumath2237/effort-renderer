@@ -4,6 +4,13 @@
 #include "../efffort-renderer/Vector3.h"
 #include "../efffort-renderer/Ray.h"
 #include "../efffort-renderer/Image.h"
+#include "../efffort-renderer/util.h"
+
+TEST(util, clamp_test) {
+	EXPECT_EQ(clamp(1, 2, 3), 2);
+	EXPECT_EQ(clamp(1, 3, 2), 2);
+	EXPECT_EQ(clamp(2, 1, 3), 2);
+}
 
 TEST(RayTest, Constructor) {
 	Ray r = Ray();
