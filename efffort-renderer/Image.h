@@ -24,7 +24,9 @@ public:
 	};
 
 	Vector3 getPixel(int x, int y)const;
-	void setPixel(int x, int y, Vector3 value);
+	void setPixel(int x, int y, const Vector3& value);
+	void AddPixel(int x, int y, const Vector3& value);
+	void devide(int N);
 	void ppm_out(string filename)const;
 	Image gammma_correction()const;
 
@@ -34,8 +36,18 @@ Vector3 Image::getPixel(int x, int y) const {
 	return data[y * width + x];
 }
 
-void Image::setPixel(int x, int y, Vector3 value) {
+void Image::setPixel(int x, int y, const Vector3& value) {
 	data[x + width * y] = value;
+}
+
+void Image::AddPixel(int x, int y, const Vector3& value) {
+	setPixel(x, y, getPixel(x, y) + value);
+}
+
+void Image::devide(int N) {
+	for (int i = 0; i < width; i++) for (int j = 0; j < height; j++) {
+		setPixel(i, j, getPixel(i, j) / N);
+	}
 }
 
 void Image::ppm_out(string filename) const {
