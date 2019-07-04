@@ -74,9 +74,9 @@ void Image::ppm_out(string filename) const {
 
 	for (int i = 0; i < width; i++) for (int j = 0; j < height; j++) {
 		Vector3 color = getPixel(i, j);
-		int r = clamp(0, (int)color.x, 255);
-		int g = clamp(0, (int)color.y, 255);
-		int b = clamp(0, (int)color.z, 255);
+		int r = clamp(0, (int)(color.x*255), 255);
+		int g = clamp(0, (int)(color.y*255), 255);
+		int b = clamp(0, (int)(color.z*255), 255);
 
 		ofs << r << " " << g << " " << b << endl;
 	}
