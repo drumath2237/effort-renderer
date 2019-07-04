@@ -151,13 +151,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\..\..\..\efffort-renderer\efffort-renderer\efffort-renderer.cpp" />
+    <ClCompile Include=".\efffort-renderer.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\..\..\..\efffort-renderer\efffort-renderer\Image.h" />
-    <ClInclude Include="..\..\..\..\..\..\efffort-renderer\efffort-renderer\Ray.h" />
-    <ClInclude Include="..\..\..\..\..\..\efffort-renderer\efffort-renderer\util.h" />
-    <ClInclude Include="..\..\..\..\..\..\efffort-renderer\efffort-renderer\Vector3.h" />
+    <ClInclude Include=".\Image.h" />
+    <ClInclude Include=".\Ray.h" />
+    <ClInclude Include=".\util.h" />
+    <ClInclude Include=".\Vector3.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
