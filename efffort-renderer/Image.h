@@ -30,7 +30,7 @@ public:
 	void AddPixel(int x, int y, const Vector3& value);
 	void devide(int N);
 	void ppm_out(string filename)const;
-	Image gammma_correction()const;
+	void gammma_correction();
 
 };
 
@@ -51,6 +51,17 @@ void Image::AddPixel(int x, int y, const Vector3& value) {
 void Image::devide(int N) {
 	for (int i = 0; i < width; i++) for (int j = 0; j < height; j++) {
 		setPixel(i, j, getPixel(i, j) / N);
+	}
+}
+
+void Image::gammma_correction() {
+	for (int i = 0; i < width; i++) for (int j = 0; j < height; j++) {
+		auto c = getPixel(i, j);
+		setPixel(i, j, Vector3(
+			std::pow(c.x, 1.0 / 2.2),
+			std::pow(c.y, 1.0 / 2.2),
+			std::pow(c.z, 1.0 / 2.2)
+		));
 	}
 }
 
