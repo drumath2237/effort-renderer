@@ -16,11 +16,13 @@ public:
 	vector<Vector3> data;
 
 	Image() :width(640), height(400) {
-		data = vector<Vector3>(width*height, Vector3());
+		auto n = width * height;
+		data = vector<Vector3>(n, Vector3());
 	};
 
 	Image(int w, int h) : width(w), height(h) {
-		data = vector<Vector3>(w * h, Vector3());
+		auto n = width * height;
+		data = vector<Vector3>(n, Vector3());
 	};
 
 	Vector3 getPixel(int x, int y)const;
@@ -33,11 +35,13 @@ public:
 };
 
 Vector3 Image::getPixel(int x, int y) const {
-	return data[y * width + x];
+	auto index = y * width + x;
+	return data[index];
 }
 
 void Image::setPixel(int x, int y, const Vector3& value) {
-	data[x + width * y] = value;
+	auto index = y * width + x;
+	data[index] = value;
 }
 
 void Image::AddPixel(int x, int y, const Vector3& value) {
