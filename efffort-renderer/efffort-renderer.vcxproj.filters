@@ -15,21 +15,24 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\..\kaito%27s file\programs\efffort-renderer\efffort-renderer\efffort-renderer.cpp">
+    <ClCompile Include=".\efffort-renderer.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\..\kaito%27s file\programs\efffort-renderer\efffort-renderer\Vector3.h">
+    <ClInclude Include=".\Image.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\kaito%27s file\programs\efffort-renderer\efffort-renderer\Ray.h">
+    <ClInclude Include=".\Ray.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\kaito%27s file\programs\efffort-renderer\efffort-renderer\Image.h">
+    <ClInclude Include=".\util.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\kaito%27s file\programs\efffort-renderer\efffort-renderer\util.h">
+    <ClInclude Include=".\Vector3.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\kaito%27s file\programs\efffort-renderer\efffort-renderer\EfffortObject.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
   </ItemGroup>
