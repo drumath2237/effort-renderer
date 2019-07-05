@@ -7,5 +7,11 @@
 #include "util.h"
 
 class Sphere : EfffortObject {
+	Vector3 o;
+	double r;
+
+	Sphere() :o(Vector3(0)), r(1.) {}
+	Sphere(Vector3 origin, double radius) :o(origin), r(radius) {}
+
 
 };
