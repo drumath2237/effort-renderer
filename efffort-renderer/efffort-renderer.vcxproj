@@ -155,6 +155,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\..\kaito%27s file\programs\efffort-renderer\efffort-renderer\EfffortObject.h" />
+    <ClInclude Include="..\..\..\..\kaito%27s file\programs\efffort-renderer\efffort-renderer\Hit.h" />
     <ClInclude Include=".\Image.h" />
     <ClInclude Include=".\Ray.h" />
     <ClInclude Include=".\util.h" />
