@@ -35,5 +35,8 @@
     <ClInclude Include="..\..\..\..\kaito%27s file\programs\efffort-renderer\efffort-renderer\EfffortObject.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\..\kaito%27s file\programs\efffort-renderer\efffort-renderer\Hit.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
