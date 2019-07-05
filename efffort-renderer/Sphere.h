@@ -13,5 +13,9 @@ class Sphere : EfffortObject {
 	Sphere() :o(Vector3(0)), r(1.) {}
 	Sphere(Vector3 origin, double radius) :o(origin), r(radius) {}
 
-
+	bool intersect(const Ray&, Hit&);
 };
+
+bool Sphere::intersect(const Ray& ray, Hit& hit) {
+	return true; // fix me
+}
