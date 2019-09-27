@@ -17,5 +17,22 @@ class Sphere : EfffortObject {
 };
 
 bool Sphere::intersect(const Ray& ray, Hit& hit) {
-	return true; // fix me
+	const double A = ray.direction.length2();
+	const double B = dot(ray.direction, ray.origin * 2 - o);
+	const double C = (o + ray.origin).length2() - r * r;
+
+	const auto D = B * B - 4 * A * C;
+	if (D < 0)
+		return false;
+
+	const auto sign_b = signbit(B) ? -1 : 1;
+	const auto alpha = (-B - sign_b * std::sqrt(D)) / 2 * A;
+	const auto beta = C / (A * alpha);
+
+	hit.t = (alpha < beta) ? alpha : beta;
+	hit.obj = this;
+	hit.pos = ray(hit.t);
+	hit.normal = normalize(hit.pos - o);
+
+	return true;
 }
