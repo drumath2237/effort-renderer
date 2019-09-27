@@ -7,6 +7,8 @@
 class EfffortObject;
 
 class Hit {
+
+public:
 	// distance from ray-origin to object
 	double t;
 

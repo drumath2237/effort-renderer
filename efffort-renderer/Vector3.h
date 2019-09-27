@@ -1,5 +1,9 @@
 #pragma once
 
+#include <iostream>
+
+using namespace std;
+
 class Vector3 {
 public:
 
@@ -10,12 +14,12 @@ public:
 	Vector3(double x_, double y_) :x(x_), y(y_), z(0) {};
 	Vector3(double x_, double y_, double z_) :x(x_), y(y_), z(z_) {};
 
-	double length() {
+	double length() const {
 		return sqrt(x * x + y * y + z * z);
 	}
 
-	double length2() {
-		x* x + y * y + z * z;
+	double length2() const {
+		return x * x + y * y + z * z;
 	}
 };
 
@@ -40,6 +44,10 @@ Vector3 operator -(const Vector3 v1, const Vector3 v2) {
 		v1.y - v2.y,
 		v1.z - v2.z
 	);
+}
+
+Vector3 operator -(const Vector3 v) {
+	return Vector3(-v.x, -v.y, -v.z);
 }
 
 Vector3 operator *(const Vector3 v1, const Vector3 v2) {
