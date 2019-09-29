@@ -31,6 +31,27 @@ bool Sphere::intersect(const Ray& ray, Hit& hit) const {
 	const double beta = C / (A * alpha);
 
 	hit.t = (alpha < beta) ? alpha : beta;
+	if (alpha < beta) {
+		if (alpha > 0) {
+			hit.t = alpha;
+		}
+		else {
+			if (beta > 0) {
+				hit.t = beta;
+			}
+			else {
+				return false;
+			}
+		}
+	}
+	else {
+		if (beta > 0) {
+			hit.t = beta;
+		}
+		else {
+			return false;
+		}
+	}
 	hit.obj = (Sphere*)this;
 	hit.pos = ray(hit.t);
 	hit.normal = normalize(hit.pos - o);
