@@ -50,10 +50,10 @@
     <ClInclude Include="PointLight.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\kaito%27s file\programs\efffort-renderer\efffort-renderer\Camera.h">
+    <ClInclude Include=".\Camera.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\kaito%27s file\programs\efffort-renderer\efffort-renderer\PerspectiveCamera.h">
+    <ClInclude Include=".\PerspectiveCamera.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
   </ItemGroup>

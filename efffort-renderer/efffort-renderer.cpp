@@ -62,4 +62,5 @@ int ortho_raytracing()
 
 	}
 	img.ppm_out("test_sphere_light_out.ppm");
+	return 0;
 }
