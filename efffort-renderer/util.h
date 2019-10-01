@@ -1,5 +1,10 @@
 #pragma once
 
+#define PI 3.14159265358979
+
+#define DEG2RAD PI/180.
+#define RAD2DEG 180./PI
+
 /// <summary>
 /// 値を最小値と最大値で切り取る関数。主にppm出力のときなどに使われる。
 /// </summary>
