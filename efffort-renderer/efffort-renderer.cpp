@@ -5,12 +5,19 @@
 #include "Image.h"
 #include "Sphere.h"
 #include "PointLight.h"
+#include "PerspectiveCamera.h"
+#include "util.h"
 
 //#define DEBUG_INTERSECTION
 
 using namespace std;
 
-int main()
+int main() {
+	const Sphere sphere = Sphere();
+
+}
+
+int ortho_raytracing()
 {
 
 	const Sphere sphere = Sphere();

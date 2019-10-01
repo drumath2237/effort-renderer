@@ -15,7 +15,7 @@ public:
 Ray PerspectiveCamera::getRay(double u, double v) const {
 	const double len = 1. / std::tan(DEG2RAD * fov);
 	const Vector3 uv = position + len * normalize(forward)
-		+ u * normalize(right) + v * normalize(up);
+		+ u * normalize(right) + v * normalize(up) * aspect;
 
 	return Ray(position, normalize(uv));
 }
