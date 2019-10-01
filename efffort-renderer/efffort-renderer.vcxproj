@@ -156,6 +156,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\..\kaito%27s file\programs\efffort-renderer\efffort-renderer\Camera.h" />
+    <ClInclude Include="..\..\..\..\kaito%27s file\programs\efffort-renderer\efffort-renderer\PerspectiveCamera.h" />
     <ClInclude Include=".\EfffortObject.h" />
     <ClInclude Include=".\Hit.h" />
     <ClInclude Include=".\Sphere.h" />
