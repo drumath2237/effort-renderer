@@ -6,7 +6,7 @@
 class Camera {
 public:
 	Vector3 position;
-	Vector3 rotation;
+	Vector3 forward, up, right;
 	double aspect;
 	double near;
 	double far;
