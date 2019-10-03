@@ -1,6 +1,7 @@
 #pragma once
 
 #include <vector>
+#include <limits>
 
 #include "EfffortObject.h"
 #include "Light.h"
@@ -52,4 +53,24 @@ EfffortObject& Scene::add(const EfffortObject& obj) {
 Light& Scene::add(const Light& light) {
 	light_list.push_back(light);
 	return (Light&)light;
+}
+
+bool Scene::intersect(const Ray& ray, Hit& hit) const {
+	if (obj_list.size == 0) return false;
+
+	hit.t = INT32_MAX;
+
+	for (auto obj : obj_list) {
+		Hit _h;
+		if (obj.intersect(ray, _h)) {
+			if (_h.t < hit.t) {
+				hit.t = _h.t;
+				hit.normal = _h.normal;
+				hit.obj = _h.obj;
+				hit.pos = _h.pos;
+			}
+		}
+	}
+
+	return hit.t != INT32_MAX;
 }
