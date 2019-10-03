@@ -9,16 +9,26 @@
 #include "util.h"
 #include "Scene.h"
 
-//#define DEBUG_INTERSECTION
+#define DEBUG_INTERSECTION
 
 using namespace std;
 
 int main() {
-	const Sphere sphere = Sphere();
+	const Sphere sphere = Sphere(
+		Vector3(-1,0,0),
+		0.9
+	);
+
+	const Sphere s2 = Sphere(
+		Vector3(1, 0, 0),
+		1
+	);
+
 	const PointLight light = PointLight(Vector3(1., 1., -1.5) * 3., 100.);
 
 	Scene scene;
 	scene.add(sphere);
+	scene.add(s2);
 	scene.add(light);
 
 	Image img = Image(640, 400);
@@ -31,7 +41,7 @@ int main() {
 	camera.up = Vector3(0, 1, 0);
 	camera.right = Vector3(1, 0, 0);
 	camera.position = Vector3(0, 0, -1.5);
-	camera.fov = 75.;
+	camera.fov = 45.;
 	camera.size = 1.;
 
 	for (int j = 0; j < img.height; j++) for (int i = 0; i < img.width; i++) {
@@ -54,7 +64,7 @@ int main() {
 
 			const auto shadow_ray = Ray(hit.pos + (hit.normal * 0.01 + sphere.o), light.pos - hit.pos);
 			Hit _h;
-			if (!sphere.intersect(shadow_ray, _h)) {
+			if (!scene.intersect(shadow_ray, _h)) {
 
 				const auto omega = normalize(light.pos - hit.pos);
 
