@@ -8,13 +8,17 @@
 #include "PerspectiveCamera.h"
 #include "util.h"
 
-#define DEBUG_INTERSECTION
+//#define DEBUG_INTERSECTION
 
 using namespace std;
 
 int main() {
+	
+}
+
+int raytrace_perspective() {
 	const Sphere sphere = Sphere();
-	const PointLight light = PointLight(Vector3(1, 1, -2.) * 5., 400.);
+	const PointLight light = PointLight(Vector3(1., 1., -1.5) * 3., 100.);
 
 	Image img = Image(640, 400);
 
@@ -62,6 +66,8 @@ int main() {
 	}
 
 	img.ppm_out("perspective_camera_raytracing.ppm");
+
+	return 0;
 }
 
 int ortho_raytracing()
