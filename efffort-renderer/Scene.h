@@ -13,12 +13,12 @@ private:
 	/// <summary>
 	/// EffortObjectのリスト
 	/// </summary>
-	vector<EfffortObject> obj_list;
+	vector<EfffortObject*> obj_list;
 
 	/// <summary>
 	/// lightのリスト
 	/// </summary>
-	vector<Light> light_list;
+	vector<Light*> light_list;
 
 public:
 
@@ -46,23 +46,21 @@ public:
 };
 
 EfffortObject& Scene::add(const EfffortObject& obj) {
-	obj_list.push_back(obj);
+	obj_list.push_back((EfffortObject*)&obj);
 	return (EfffortObject & )obj;
 }
 
 Light& Scene::add(const Light& light) {
-	light_list.push_back(light);
+	light_list.push_back((Light*)&light);
 	return (Light&)light;
 }
 
 bool Scene::intersect(const Ray& ray, Hit& hit) const {
-	if (obj_list.size == 0) return false;
-
 	hit.t = INT32_MAX;
 
 	for (auto obj : obj_list) {
 		Hit _h;
-		if (obj.intersect(ray, _h)) {
+		if (obj->intersect(ray, _h)) {
 			if (_h.t < hit.t) {
 				hit.t = _h.t;
 				hit.normal = _h.normal;
