@@ -8,16 +8,18 @@
 #include "Hit.h"
 
 class Scene {
-public:
+private:
 	/// <summary>
 	/// EffortObjectのリスト
 	/// </summary>
-	vector<EfffortObject*> obj_list;
+	vector<EfffortObject> obj_list;
 
 	/// <summary>
 	/// lightのリスト
 	/// </summary>
-	vector<Light*> light_list;
+	vector<Light> light_list;
+
+public:
 
 	/// <summary>
 	/// scene中のObjectとRayの交差判定
@@ -32,12 +34,22 @@ public:
 	/// </summary>
 	/// <param name="obj">追加するObject</param>
 	/// <returns>追加したObjectの参照</returns>
-	EfffortObject* add(const EfffortObject& obj);
+	EfffortObject& add(const EfffortObject& obj);
 
 	/// <summary>
 	/// SceneにLightを追加する
 	/// </summary>
 	/// <param name="light"></param>
 	/// <returns>追加したLightの参照</returns>
-	Light* add(const Light& light);
+	Light& add(const Light& light);
 };
+
+EfffortObject& Scene::add(const EfffortObject& obj) {
+	obj_list.push_back(obj);
+	return (EfffortObject & )obj;
+}
+
+Light& Scene::add(const Light& light) {
+	light_list.push_back(light);
+	return (Light&)light;
+}
