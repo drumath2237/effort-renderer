@@ -62,7 +62,8 @@ int main() {
 			color = Vector3(1, 0, 1);
 #endif // DEBUG_INTERSECTION
 
-			const auto shadow_ray = Ray(hit.pos + (hit.normal * 0.01 + sphere.o), light.pos - hit.pos);
+			const auto shadow_ray = Ray(hit.pos 
+				+ (hit.normal * 0.01 + ((Sphere*)hit.obj)->o), light.pos - hit.pos);
 			Hit _h;
 			if (!scene.intersect(shadow_ray, _h)) {
 
