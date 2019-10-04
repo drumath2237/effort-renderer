@@ -16,7 +16,7 @@ using namespace std;
 int main() {
 	const Sphere sphere = Sphere(
 		Vector3(-1,0,0),
-		0.9
+		1.
 	);
 
 	const Sphere s2 = Sphere(
@@ -27,8 +27,8 @@ int main() {
 	const PointLight light = PointLight(Vector3(1., 1., -1.5) * 3., 100.);
 
 	Scene scene;
-	scene.add(sphere);
 	scene.add(s2);
+	scene.add(sphere);
 	scene.add(light);
 
 	Image img = Image(640, 400);
@@ -61,6 +61,8 @@ int main() {
 #ifdef DEBUG_INTERSECTION
 			color = Vector3(1, 0, 1);
 #endif // DEBUG_INTERSECTION
+
+			//cout << hit.obj << endl;
 
 			const auto shadow_ray = Ray(hit.pos 
 				+ (hit.normal * 0.01 + ((Sphere*)hit.obj)->o), light.pos - hit.pos);
