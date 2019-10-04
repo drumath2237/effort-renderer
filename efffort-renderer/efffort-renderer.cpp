@@ -64,8 +64,7 @@ int main() {
 
 			//cout << hit.obj << endl;
 
-			const auto shadow_ray = Ray(hit.pos 
-				+ (hit.normal * 0.01 + ((Sphere*)hit.obj)->o), light.pos - hit.pos);
+			const auto shadow_ray = Ray(hit.pos + (hit.normal * 0.01), light.pos - hit.pos);
 			Hit _h;
 			if (!scene.intersect(shadow_ray, _h)) {
 
